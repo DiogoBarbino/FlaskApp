@@ -1,0 +1,16 @@
+# Minimal .gitignore for Flask
+
+# Virtual environment
+venv/
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Sensitive data
+instance/
+.env
+.flaskenv
+
+# Database
+*.sqlite
