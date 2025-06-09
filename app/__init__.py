@@ -1,11 +1,10 @@
 from flask import Flask
+from app.routes import register_routes
 
 def create_app():
     app = Flask(__name__)
 
     #carrega as rotas
-    from app.routes.web_route import web_bp
-    app.register_blueprint(web_bp)
-
+    register_routes(app)
 
     return app
