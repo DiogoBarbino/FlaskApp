@@ -1,13 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Homepage</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Meu Conteúdo Personalizado</h1>
+    <p>Este conteúdo substitui o bloco 'content' do template base.</p><br>
+    <a href="/auth/login">Realizar Login</a><br><br>
+    <a href="/auth/register">Realizar Cadastro</a>
+</div>
+</div>
+{% endblock %}

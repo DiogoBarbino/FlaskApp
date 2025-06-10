@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Registra usuário{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100 vw-100">
+    <div class="w-50">
+        <h1>Login</h1>
+        <form action="/auth/login" method="POST"  enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"  required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Senha:</label>
+            <input type="password" class="form-control" name="password" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+            <a href="/auth/register">Novo usuário!</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

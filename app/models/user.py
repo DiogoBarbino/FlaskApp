@@ -22,8 +22,11 @@ class User(db.Model):
         """Verifica se a senha está correta"""
         return bcrypt.checkpw(password.encode('utf-8'), self.password_hash.encode('utf-8'))
 
-    def __init__(self, **kwargs):
+    def __init__(self,name,email,password, **kwargs):
         super(User, self).__init__(**kwargs)
+        self.name = name
+        self.email = email
+        self.set_password(password)
 
     def __repr__(self):
         return f'<User {self.name}>'
