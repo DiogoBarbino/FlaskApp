@@ -5,8 +5,8 @@
 {% block content %}
 <div class="d-flex justify-content-center align-items-center vh-100 vw-100">
     <div class="w-50">
-        <h1>Cadastro de usuário</h1>
-        <form action="/auth/register" method="POST"  enctype="multipart/form-data">
+        <h1 class="title mb-3">Cadastro de usuário</h1>
+        <form action="/auth/register" method="POST"  enctype="multipart/form-data" class="mb-3">
           <div class="mb-3">
             <label for="name" class="form-label">Nome:</label>
             <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" required>
@@ -23,6 +23,10 @@
           <button type="submit" class="btn btn-primary">Cadastrar</button>
             <a href="/auth/login">Já sou cadastrado!</a>
         </form>
+
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-{{ category }} mb-3">{{ message }}</div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

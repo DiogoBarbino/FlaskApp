@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Dashboard Maroto</h1>
+    <p>User_name: {{current_user.name}}</p>
+    <p>User_email: {{current_user.email}}</p>
+    <p>User_token: {{current_user.token}}</p>
+    <form action="/auth/logout" method="POST">
+          <button type="submit" class="btn btn-primary">Sair</button>
+    </form>
+</div>
+{% endblock %}
